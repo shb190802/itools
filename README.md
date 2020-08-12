@@ -17,9 +17,9 @@ npm i -S itools.js
 ```javascript
 // esm 
 import iTools from 'itools.js'
-
 // vue
-Vue.prototype.$libs = iTools
+Vue.prototype.$tools = iTools
+
 // cjs
 const iTools = require('itools.js')
 

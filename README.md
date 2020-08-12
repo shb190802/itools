@@ -1,4 +1,4 @@
-# i-libs
+# itools
 
 前端开发中常用的工具方法
 
@@ -7,7 +7,7 @@
 ## Install
 
 ```javascript
-npm i -S i-libs
+npm i -S itools.js
 ```
 
 
@@ -16,15 +16,15 @@ npm i -S i-libs
 
 ```javascript
 // esm 
-import iLibs from 'i-libs'
+import iTools from 'itools.js'
 
 // vue
-Vue.prototype.$libs = iLibs
+Vue.prototype.$libs = iTools
 // cjs
-const iLibs = require('i-libs')
+const iTools = require('itools.js')
 
 // iife
-<script src='dist/i-libs.js'></script>
+<script src='dist/itools.js'></script>
 ```
 
 
@@ -37,7 +37,7 @@ const iLibs = require('i-libs')
 
   ```javascript
   let obj_a = { a: 1 }
-  let obj_b = iLibs.clone(obj_a) // cloneDeep
+  let obj_b = iTools.clone(obj_a) // cloneDeep
   ```
 
 * cookie
@@ -45,9 +45,9 @@ const iLibs = require('i-libs')
   cookie 操作
 
   ```javascript
-  iLibs.cookie.set('name','value','exSeconds','path')
-  let name = iLibs.cookie.get('name')
-  iLibs.cookie.del('name')
+  iTools.cookie.set('name','value','exSeconds','path')
+  let name = iTools.cookie.get('name')
+  iTools.cookie.del('name')
   ```
 
 * copy
@@ -56,7 +56,7 @@ const iLibs = require('i-libs')
   
   ```javascript
 	let str = 'copy str'
-  if(iLibs.copy(str)){
+  if(iTools.copy(str)){
       alert('copy success')
   }
   ```
@@ -68,7 +68,7 @@ const iLibs = require('i-libs')
   ```javascript
   let filename = '当前页面'
   let filePath = window.location.href
-  iLibs.download(filename, filePath)
+  iTools.download(filename, filePath)
   ```
 
 * getParam
@@ -76,8 +76,8 @@ const iLibs = require('i-libs')
   获取浏览器地址栏中的参数
 
   ```javascript
-  let name = iLibs.getParam('name')
-  let age = iLibs.getParam('age', 'https://suohb.com?age=18')
+  let name = iTools.getParam('name')
+  let age = iTools.getParam('age', 'https://suohb.com?age=18')
   ```
 
 * isBrowser
@@ -85,7 +85,7 @@ const iLibs = require('i-libs')
   判断当前环境是否是浏览器环境
   
   ```javascript
-	let isBrowser = iLibs.isBrowser // 是否浏览器环境
+	let isBrowser = iTools.isBrowser // 是否浏览器环境
   ```
   
 * randomStr
@@ -93,9 +93,9 @@ const iLibs = require('i-libs')
   获取固定长度的随机字符串
 
   ```javascript
-  let str = iLibs.randomStr(10) // 
-  let str2 = iLibs.randomStr(9,'letter') // only letter
-  let str3 = iLibs.randomStr(8,'number') // only number
+  let str = iTools.randomStr(10) // 
+  let str2 = iTools.randomStr(9,'letter') // only letter
+  let str3 = iTools.randomStr(8,'number') // only number
   console.log(str, str2, str3) // lq3hc8ogxl carijlvjz 83568934
   ```
 
@@ -104,15 +104,15 @@ const iLibs = require('i-libs')
   判断变量类型
 
   ```javascript
-  console.log(iLibs.type('str')) // string
-  console.log(iLibs.type(124)) // number
-  console.log(iLibs.type(true)) // boolean
-  console.log(iLibs.type(null)) // null
-  console.log(iLibs.type([1, 2, 3])) // array
-  console.log(iLibs.type(() => { })) // function
-  console.log(iLibs.type({ a: 1 })) // object
-  console.log(iLibs.type(new Date())) // date
-  console.log(iLibs.type(undefined)) // undefined
+  console.log(iTools.type('str')) // string
+  console.log(iTools.type(124)) // number
+  console.log(iTools.type(true)) // boolean
+  console.log(iTools.type(null)) // null
+  console.log(iTools.type([1, 2, 3])) // array
+  console.log(iTools.type(() => { })) // function
+  console.log(iTools.type({ a: 1 })) // object
+  console.log(iTools.type(new Date())) // date
+  console.log(iTools.type(undefined)) // undefined
   ```
 
 * uniqueId
@@ -120,7 +120,7 @@ const iLibs = require('i-libs')
   获取唯一ID
 
   ```javascript
-  console.log(iLibs.uniqueId()) // kdqsnvmi_zri604sxb89
+  console.log(iTools.uniqueId()) // kdqsnvmi_zri604sxb89
   ```
 
   

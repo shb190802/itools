@@ -1,9 +1,9 @@
 {
-	"name": "i-libs",
+	"name": "itools.js",
 	"version": "1.0.0",
 	"description": "",
-	"main": "./dist/i-libs.js",
-	"module": "./dist/i-libs.esm.js",
+	"main": "./dist/itools.js",
+	"module": "./dist/itools.esm.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "rollup -c rollup.config.js",
@@ -11,12 +11,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/shb190802/i-libs.git"
+		"url": "git+https://github.com/shb190802/itools.git"
 	},
 	"bugs": {
-		"url": "https://github.com/shb190802/i-libs/issues"
+		"url": "https://github.com/shb190802/itools/issues"
 	},
-	"homepage": "https://github.com/shb190802/i-libs#readme",
+	"homepage": "https://github.com/shb190802/itools#readme",
 	"keywords": [],
 	"author": "",
 	"license": "ISC",

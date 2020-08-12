@@ -1,5 +1,5 @@
 {
-	"name": "s-tools",
+	"name": "shb-tools",
 	"version": "1.0.0",
 	"description": "",
 	"main": "./dist/s-tools.js",

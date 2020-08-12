@@ -1,4 +1,4 @@
-# s-tools
+# i-libs
 
 前端开发中常用的工具方法
 
@@ -7,7 +7,7 @@
 ## Install
 
 ```javascript
-npm i -S s-tools
+npm i -S i-libs
 ```
 
 
@@ -16,13 +16,15 @@ npm i -S s-tools
 
 ```javascript
 // esm 
-import shbTools from 'shb-tools'
+import iLibs from 'i-libs'
 
+// vue
+Vue.prototype.$libs = iLibs
 // cjs
-const shbTools = require('shb-tools')
+const iLibs = require('i-libs')
 
 // iife
-<script src='dist/shb-tools.js'></script>
+<script src='dist/i-libs.js'></script>
 ```
 
 
@@ -35,7 +37,7 @@ const shbTools = require('shb-tools')
 
   ```javascript
   let obj_a = { a: 1 }
-  let obj_b = shbTools.clone(obj_a) // cloneDeep
+  let obj_b = iLibs.clone(obj_a) // cloneDeep
   ```
 
 * cookie
@@ -43,9 +45,9 @@ const shbTools = require('shb-tools')
   cookie 操作
 
   ```javascript
-  shbTools.cookie.set('name','value','exSeconds','path')
-  let name = shbTools.cookie.get('name')
-  shbTools.cookie.del('name')
+  iLibs.cookie.set('name','value','exSeconds','path')
+  let name = iLibs.cookie.get('name')
+  iLibs.cookie.del('name')
   ```
 
 * copy
@@ -54,7 +56,7 @@ const shbTools = require('shb-tools')
   
   ```javascript
 	let str = 'copy str'
-  if(shbTools.copy(str)){
+  if(iLibs.copy(str)){
       alert('copy success')
   }
   ```
@@ -66,7 +68,7 @@ const shbTools = require('shb-tools')
   ```javascript
   let filename = '当前页面'
   let filePath = window.location.href
-  shbTools.download(filename, filePath)
+  iLibs.download(filename, filePath)
   ```
 
 * getParam
@@ -74,8 +76,8 @@ const shbTools = require('shb-tools')
   获取浏览器地址栏中的参数
 
   ```javascript
-  let name = shbTools.getParam('name')
-  let age = shbTools.getParam('age', 'https://suohb.com?age=18')
+  let name = iLibs.getParam('name')
+  let age = iLibs.getParam('age', 'https://suohb.com?age=18')
   ```
 
 * isBrowser
@@ -83,7 +85,7 @@ const shbTools = require('shb-tools')
   判断当前环境是否是浏览器环境
   
   ```javascript
-	let isBrowser = shbTools.isBrowser // 是否浏览器环境
+	let isBrowser = iLibs.isBrowser // 是否浏览器环境
   ```
   
 * randomStr
@@ -91,9 +93,9 @@ const shbTools = require('shb-tools')
   获取固定长度的随机字符串
 
   ```javascript
-  let str = shbTools.randomStr(10) // 
-  let str2 = shbTools.randomStr(9,'letter') // only letter
-  let str3 = shbTools.randomStr(8,'number') // only number
+  let str = iLibs.randomStr(10) // 
+  let str2 = iLibs.randomStr(9,'letter') // only letter
+  let str3 = iLibs.randomStr(8,'number') // only number
   console.log(str, str2, str3) // lq3hc8ogxl carijlvjz 83568934
   ```
 
@@ -102,15 +104,15 @@ const shbTools = require('shb-tools')
   判断变量类型
 
   ```javascript
-  console.log(shbTools.type('str')) // string
-  console.log(shbTools.type(124)) // number
-  console.log(shbTools.type(true)) // boolean
-  console.log(shbTools.type(null)) // null
-  console.log(shbTools.type([1, 2, 3])) // array
-  console.log(shbTools.type(() => { })) // function
-  console.log(shbTools.type({ a: 1 })) // object
-  console.log(shbTools.type(new Date())) // date
-  console.log(shbTools.type(undefined)) // undefined
+  console.log(iLibs.type('str')) // string
+  console.log(iLibs.type(124)) // number
+  console.log(iLibs.type(true)) // boolean
+  console.log(iLibs.type(null)) // null
+  console.log(iLibs.type([1, 2, 3])) // array
+  console.log(iLibs.type(() => { })) // function
+  console.log(iLibs.type({ a: 1 })) // object
+  console.log(iLibs.type(new Date())) // date
+  console.log(iLibs.type(undefined)) // undefined
   ```
 
 * uniqueId
@@ -118,7 +120,7 @@ const shbTools = require('shb-tools')
   获取唯一ID
 
   ```javascript
-  console.log(shbTools.uniqueId()) // kdqsnvmi_zri604sxb89
+  console.log(iLibs.uniqueId()) // kdqsnvmi_zri604sxb89
   ```
 
   

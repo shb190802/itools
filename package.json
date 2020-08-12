@@ -1,9 +1,9 @@
 {
-	"name": "shb-tools",
+	"name": "i-libs",
 	"version": "1.0.0",
 	"description": "",
-	"main": "./dist/s-tools.js",
-	"module": "./dist/s-tools.esm.js",
+	"main": "./dist/i-libs.js",
+	"module": "./dist/i-libs.esm.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "rollup -c rollup.config.js",
@@ -11,12 +11,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/shb190802/s-tools.git"
+		"url": "git+https://github.com/shb190802/i-libs.git"
 	},
 	"bugs": {
-		"url": "https://github.com/shb190802/s-tools/issues"
+		"url": "https://github.com/shb190802/i-libs/issues"
 	},
-	"homepage": "https://github.com/shb190802/s-tools#readme",
+	"homepage": "https://github.com/shb190802/i-libs#readme",
 	"keywords": [],
 	"author": "",
 	"license": "ISC",

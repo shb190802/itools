@@ -4,11 +4,11 @@ import { terser } from 'rollup-plugin-terser'
 module.exports = {
 	input: 'src/index.js',
 	output: [{
-		file: 'dist/shb-tools.js',
+		file: 'dist/i-libs.js',
 		format: 'umd',
-		name: 'shbTools'
+		name: 'iLibs'
 	}, {
-		file: 'dist/shb-tools.esm.js',
+		file: 'dist/i-libs.esm.js',
 		format: 'esm'
 	}],
 	plugins: [babel({

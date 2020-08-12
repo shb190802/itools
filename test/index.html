@@ -8,46 +8,46 @@
 </head>
 
 <body>
-	<script src="../dist/shb-tools.js"></script>
+	<script src="../dist/i-libs.js"></script>
 	<script>
 		// cookie
-		shbTools.cookie.set('name', 'shb', 3600)
-		let name = shbTools.cookie.get('name')
-		shbTools.cookie.del('name')
+		iLibs.cookie.set('name', 'shb', 3600)
+		let name = iLibs.cookie.get('name')
+		iLibs.cookie.del('name')
 		// isBrowser
-		let isBrowser = shbTools.isBrowser
+		let isBrowser = iLibs.isBrowser
 		console.log(isBrowser)
 		// clone
 		let obj_a = { a: 1 }
-		let obj_b = shbTools.clone(obj_a)
+		let obj_b = iLibs.clone(obj_a)
 		obj_a.a = 2
 		console.log(obj_a, obj_b)
 		// download
 		let filename = '当前页面'
 		let filePath = window.location.href
-		// shbTools.download(filename, filePath)
+		// iLibs.download(filename, filePath)
 		// getParam
-		let name2 = shbTools.getParam('name')
-		let age = shbTools.getParam('age', 'https://suohb.com?age=18')
+		let name2 = iLibs.getParam('name')
+		let age = iLibs.getParam('age', 'https://suohb.com?age=18')
 		console.log(name2, age)
 		// randomStr
-		let str = shbTools.randomStr(10)
-		let str2 = shbTools.randomStr(9, 'letter')
-		let str3 = shbTools.randomStr(8, 'number')
+		let str = iLibs.randomStr(10)
+		let str2 = iLibs.randomStr(9, 'letter')
+		let str3 = iLibs.randomStr(8, 'number')
 		console.log(str, str2, str3)
 		// type
-		console.log(shbTools.type('str'))
-		console.log(shbTools.type(124))
-		console.log(shbTools.type(true))
-		console.log(shbTools.type(null))
-		console.log(shbTools.type([1, 2, 3]))
-		console.log(shbTools.type(() => { }))
-		console.log(shbTools.type({ a: 1 }))
-		console.log(shbTools.type(new Date()))
-		console.log(shbTools.type(undefined))
+		console.log(iLibs.type('str'))
+		console.log(iLibs.type(124))
+		console.log(iLibs.type(true))
+		console.log(iLibs.type(null))
+		console.log(iLibs.type([1, 2, 3]))
+		console.log(iLibs.type(() => { }))
+		console.log(iLibs.type({ a: 1 }))
+		console.log(iLibs.type(new Date()))
+		console.log(iLibs.type(undefined))
 		// uniqueId
-		console.log(shbTools.uniqueId())
-		console.log(shbTools.uniqueId())
+		console.log(iLibs.uniqueId())
+		console.log(iLibs.uniqueId())
 
 	</script>
 </body>

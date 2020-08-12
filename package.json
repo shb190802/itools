@@ -1,0 +1,29 @@
+{
+	"name": "s-tools",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./dist/s-tools.js",
+	"module": "./dist/s-tools.esm.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "rollup -c rollup.config.js",
+		"watch": "rollup -c rollup.config.js --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/shb190802/s-tools.git"
+	},
+	"bugs": {
+		"url": "https://github.com/shb190802/s-tools/issues"
+	},
+	"homepage": "https://github.com/shb190802/s-tools#readme",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"rollup-plugin-terser": "^7.0.0",
+		"@babel/core": "^7.8.3",
+		"@babel/preset-env": "^7.8.3",
+		"rollup-plugin-babel": "^4.3.3"
+	}
+}

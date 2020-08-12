@@ -53,7 +53,7 @@ const sTools = require('s-tools')
   复制一个字符串到剪贴板
   
   ```javascript
-let str = 'copy str'
+	let str = 'copy str'
   if(sTools.copy(str)){
       alert('copy success')
   }
@@ -83,7 +83,7 @@ let str = 'copy str'
   判断当前环境是否是浏览器环境
   
   ```javascript
-let isBrowser = sTools.isBrowser // 是否浏览器环境
+	let isBrowser = sTools.isBrowser // 是否浏览器环境
   ```
   
 * randomStr

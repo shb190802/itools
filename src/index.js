@@ -7,6 +7,8 @@ import copy from './tools/copy'
 import uniqueId from './tools/uniqueId'
 import isBrowser from './tools/isBrowser'
 import randomStr from './tools/randomStr'
+import debounce from './tools/debounce'
+import throttle from './tools/throttle'
 
 export default {
 	cookie,
@@ -17,5 +19,7 @@ export default {
 	copy,
 	uniqueId,
 	isBrowser,
-	randomStr
+	randomStr,
+	debounce,
+	throttle
 }

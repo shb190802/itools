@@ -123,5 +123,19 @@ const iTools = require('itools.js')
   console.log(iTools.uniqueId()) // kdqsnvmi_zri604sxb89
   ```
 
+* debounce & throttle
+
+  防抖和节流函数
+
+  ```javascript
+	function logPos(e) {
+		console.log(e.pageX, e.pageY)
+	}
+  // debounce
+	// document.addEventListener('mousemove', iTools.debounce(logPos, 500))
+	// throttle
+	document.addEventListener('mousemove', iTools.throttle(logPos, 500))
+  ```
+
   
 

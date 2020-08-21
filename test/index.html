@@ -1,3 +1,10 @@
+<!--
+ * @Author: suo
+ * @Date: 2020-08-12 18:31:29
+ * @LastEditTime: 2020-08-21 11:27:35
+ * @LastEditors: suo
+ * @Description: 
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +18,11 @@
 	<script src="../dist/itools.js"></script>
 	<script>
 		// cookie
+		iTools.cookie.set('name1', 'shb', 3600)
 		iTools.cookie.set('name', 'shb', 3600)
-		let name = iTools.cookie.get('name')
-		iTools.cookie.del('name')
+		let name = iTools.cookie.get('name1')
+		console.log(name)
+		// iTools.cookie.del('name')
 		// isBrowser
 		let isBrowser = iTools.isBrowser
 		console.log(isBrowser)

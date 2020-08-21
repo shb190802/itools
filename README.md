@@ -131,7 +131,7 @@ const iTools = require('itools.js')
 	function logPos(e) {
 		console.log(e.pageX, e.pageY)
 	}
-  // debounce
+	// debounce
 	// document.addEventListener('mousemove', iTools.debounce(logPos, 500))
 	// throttle
 	document.addEventListener('mousemove', iTools.throttle(logPos, 500))

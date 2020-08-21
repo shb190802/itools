@@ -20,7 +20,7 @@ const set = (name, value, seconds = 0, path = '/') => {
  */
 const get = (name) => {
 	var strCookies = document.cookie;
-	var array = strCookies.split(';');
+	var array = strCookies.split(/;\s*/);
 	for (var i = 0; i < array.length; i++) {
 		var item = array[i].split("=");
 		if (item[0] == name) {

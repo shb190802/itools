@@ -65,6 +65,14 @@
 		// throttle
 		document.addEventListener('mousemove', iTools.throttle(logPos, 500))
 
+		// trim
+		let str4 = ' aa '
+		let arr = [' aa ', ' bb ']
+		let obj = { a: ' aa ', b: [' bb  '] }
+		console.log(iTools.trim(str4))
+		console.log(iTools.trim(arr))
+		console.log(iTools.trim(obj))
+
 	</script>
 </body>
 

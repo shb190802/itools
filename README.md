@@ -136,6 +136,17 @@ const iTools = require('itools.js')
 	// throttle
 	document.addEventListener('mousemove', iTools.throttle(logPos, 500))
   ```
+* trim
 
+	针对 string、array、object格式，深度trim
+
+	```javascript
+	let str4 = ' aa '
+	let arr = [' aa ', ' bb ']
+	let obj = { a: ' aa ', b: [' bb  '] }
+	console.log(iTools.trim(str4)) // aa
+	console.log(iTools.trim(arr)) // ['aa','bb']
+	console.log(iTools.trim(obj)) // {a:'aa',b:['bb']}
+	```
   
 

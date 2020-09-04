@@ -1,6 +1,6 @@
 {
 	"name": "itools.js",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "",
 	"main": "./dist/itools.js",
 	"module": "./dist/itools.esm.js",
@@ -17,7 +17,21 @@
 		"url": "https://github.com/shb190802/itools/issues"
 	},
 	"homepage": "https://github.com/shb190802/itools#readme",
-	"keywords": [],
+	"keywords": [
+		"clone",
+		"cloneDeep",
+		"cookie",
+		"debounce",
+		"throttle",
+		"download",
+		"type",
+		"typeof",
+		"getParam",
+		"getUrlParam",
+		"trim",
+		"uniqueId",
+		"trim array object"
+	],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {

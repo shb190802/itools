@@ -9,6 +9,7 @@ import isBrowser from './tools/isBrowser'
 import randomStr from './tools/randomStr'
 import debounce from './tools/debounce'
 import throttle from './tools/throttle'
+import trim from './tools/trim'
 
 export default {
 	cookie,
@@ -21,5 +22,6 @@ export default {
 	isBrowser,
 	randomStr,
 	debounce,
-	throttle
+	throttle,
+	trim
 }

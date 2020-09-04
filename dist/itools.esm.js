@@ -1,1 +1,274 @@
-var e=function(e,t){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0,o=arguments.length>3&&void 0!==arguments[3]?arguments[3]:"/",r="";if(0!==n){var c=new Date;c.setTime(c.getTime()+1e3*n),r="expires=".concat(c.toGMTString(),";")}document.cookie="".concat(e,"=").concat(t," ;").concat(r,"path=").concat(o)},t=function(e){return{"[object Boolean]":"boolean","[object Number]":"number","[object String]":"string","[object Function]":"function","[object Array]":"array","[object Date]":"date","[object RegExp]":"regExp","[object Undefined]":"undefined","[object Null]":"null","[object Object]":"object"}[Object.prototype.toString.call(e)]},n=!!window,o={cookie:{set:e,get:function(e){for(var t=document.cookie.split(/;\s*/),n=0;n<t.length;n++){var o=t[n].split("=");if(o[0]==e)return o[1]}return null},del:function(t){e(t,"",-1)}},type:t,clone:function e(n){var o,r=t(n);if("array"===r)o=[];else{if("object"!==r)return n;o={}}if("array"===r)for(var c=0,i=n.length;c<i;c++)o.push(e(n[c]));else if("object"===r)for(var a in n)o[a]=e(n[a]);return o},getParam:function(e,t){t=t||window.location.search.substr(1);var n=new RegExp("(^|\\?|&)".concat(e,"=([^&#]*)")).exec(t);return n?n[2]:""},download:function(e,t){var n=document.createElement("a");if(n){if(document.body.appendChild(n),n.style="display: none",n.download=e,n.href=t,document.createEvent){var o=document.createEvent("MouseEvents");o.initEvent("click",!0,!1),n.dispatchEvent(o)}else document.createEventObject?n.fireEvent("onclick"):"function"==typeof n.onclick&&n.onclick();document.body.removeChild(n)}},copy:function(e){var t=document.createElement("input");t.style.position="absolute",t.style.opacity=0,t.value=e;var n=!0;try{t.select(),document.execCommand("Copy")}catch(e){n=!1}return document.body.appendChild(t),n},uniqueId:function(){var e=(+new Date).toString(36),t=Math.random().toString(36).split(".")[1];return"".concat(e,"_").concat(t)},isBrowser:n,randomStr:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"All";t=t.toLowerCase();for(var n="abcdefghijklmnopqrstuvwxyz",o="0123456789",r={letter:n,number:o,all:n+o}[t=["letter","number","all"].includes(t)?t:"all"],c="",i=0;i<e;i++)c+=r[~~(Math.random()*r.length)];return c},debounce:function(e,t){var n;return function(){var o=this,r=arguments;n&&clearTimeout(n),n=setTimeout((function(){e.apply(o,r)}),t)}},throttle:function(e,t){var n;return function(){var o=this,r=arguments;n||(n=setTimeout((function(){n=null,e.apply(o,r)}),t))}},trim:function e(n){var o=t(n);if("string"===o)n=n.trim();else if("array"===o)n=n.map((function(t){return e(t)}));else if("object"===o)for(var r in n)n[r]=e(n[r]);return n}};export default o;
+/**
+ * 设置cookie
+ * @param {String} name 名称
+ * @param {String} value 值
+ * @param {Number} seconds 失效的秒数，不传为session有效期
+ * @param {String} path 路径默认是根路径
+ */
+var set = function set(name, value) {
+  var seconds = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+  var path = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '/';
+  var expires = '';
+
+  if (seconds !== 0) {
+    var exp = new Date();
+    exp.setTime(exp.getTime() + seconds * 1000);
+    expires = "expires=".concat(exp.toGMTString(), ";");
+  }
+
+  document.cookie = "".concat(name, "=").concat(value, " ;").concat(expires, "path=").concat(path);
+};
+/**
+ * 获取cookie
+ * @param {*} name 
+ */
+
+
+var get = function get(name) {
+  var strCookies = document.cookie;
+  var array = strCookies.split(/;\s*/);
+
+  for (var i = 0; i < array.length; i++) {
+    var item = array[i].split("=");
+
+    if (item[0] == name) {
+      return item[1];
+    }
+  }
+
+  return null;
+};
+/**
+ * 删除cookie
+ * @param {*} name 
+ */
+
+
+var del = function del(name) {
+  set(name, '', -1);
+};
+
+var cookie = {
+  set: set,
+  get: get,
+  del: del
+};
+
+/**
+ * 获取变量类型
+ * @param {any} obj 
+ */
+var type = function type(obj) {
+  var toString = Object.prototype.toString;
+  var map = {
+    '[object Boolean]': 'boolean',
+    '[object Number]': 'number',
+    '[object String]': 'string',
+    '[object Function]': 'function',
+    '[object Array]': 'array',
+    '[object Date]': 'date',
+    '[object RegExp]': 'regExp',
+    '[object Undefined]': 'undefined',
+    '[object Null]': 'null',
+    '[object Object]': 'object'
+  };
+  return map[toString.call(obj)];
+};
+
+/**
+ * 深拷贝
+ * @param {*} data 
+ */
+
+var clone = function clone(data) {
+  var type$1 = type(data);
+  var obj;
+
+  if (type$1 === 'array') {
+    obj = [];
+  } else if (type$1 === 'object') {
+    obj = {};
+  } else {
+    return data;
+  }
+
+  if (type$1 === 'array') {
+    for (var i = 0, len = data.length; i < len; i++) {
+      obj.push(clone(data[i]));
+    }
+  } else if (type$1 === 'object') {
+    for (var key in data) {
+      obj[key] = clone(data[key]);
+    }
+  }
+
+  return obj;
+};
+
+/**
+ * 获取URL中的参数
+ * @param {*} key 
+ * @param {*} url ?
+ */
+var getParam = function getParam(key, url) {
+  url = url || location.search.substr(1);
+  var reg = new RegExp("(^|\\?|&)".concat(key, "=([^&#]*)"));
+  var r = reg.exec(url);
+  return r ? r[2] : '';
+};
+
+/**
+ * 下载URL另存为文件名
+ * @param {*} filename 
+ * @param {*} data 
+ */
+var download = function download(filename, data) {
+  var DownloadLink = document.createElement('a');
+
+  if (DownloadLink) {
+    document.body.appendChild(DownloadLink);
+    DownloadLink.style = 'display: none';
+    DownloadLink.download = filename;
+    DownloadLink.href = data;
+
+    if (document.createEvent) {
+      var DownloadEvt = document.createEvent('MouseEvents');
+      DownloadEvt.initEvent('click', true, false);
+      DownloadLink.dispatchEvent(DownloadEvt);
+    } else if (document.createEventObject) DownloadLink.fireEvent('onclick');else if (typeof DownloadLink.onclick == 'function') DownloadLink.onclick();
+
+    document.body.removeChild(DownloadLink);
+  }
+};
+
+/**
+ * 复制内容到剪贴板
+ * @param {*} text 
+ */
+var copy = function copy(text) {
+  var input = document.createElement('input');
+  input.style.position = 'absolute';
+  input.style.opacity = 0;
+  input.value = text;
+  var res = true;
+
+  try {
+    input.select();
+    document.execCommand('Copy');
+  } catch (e) {
+    res = false;
+  }
+
+  document.body.appendChild(input);
+  return res;
+};
+
+/**
+ * 不重复ID
+ */
+var uniqueId = function uniqueId() {
+  var time = (+new Date()).toString(36);
+  var random = Math.random().toString(36).split('.')[1];
+  return "".concat(time, "_").concat(random);
+};
+
+/**
+ * 
+ * @param {*} len 
+ * @param {*} type Letter Number All
+ */
+var randomStr = function randomStr(len) {
+  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'All';
+  type = type.toLowerCase();
+  type = ['letter', 'number', 'all'].includes(type) ? type : 'all';
+  var letter = 'abcdefghijklmnopqrstuvwxyz';
+  var number = '0123456789';
+  var str = {
+    letter: letter,
+    number: number,
+    all: letter + number
+  }[type];
+  var res = '';
+
+  for (var i = 0; i < len; i++) {
+    res += str[~~(Math.random() * str.length)];
+  }
+
+  return res;
+};
+
+/*
+ * @Author: suo
+ * @Date: 2020-08-20 11:02:25
+ * @LastEditTime: 2020-08-20 11:14:02
+ * @LastEditors: suo
+ * @Description: 防抖函数
+ */
+var debounce = function debounce(fun, time) {
+  var timer;
+  return function () {
+    var _this = this;
+
+    var args = arguments;
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function () {
+      fun.apply(_this, args);
+    }, time);
+  };
+};
+
+/*
+ * @Author: suo
+ * @Date: 2020-08-20 11:02:25
+ * @LastEditTime: 2020-08-20 11:08:27
+ * @LastEditors: suo
+ * @Description: 节流函数
+ */
+var throttle = function throttle(fun, time) {
+  var timer;
+  return function () {
+    var _this = this;
+
+    var args = arguments;
+    if (timer) return;
+    timer = setTimeout(function () {
+      timer = null;
+      fun.apply(_this, args);
+    }, time);
+  };
+};
+
+var trim = function trim(data) {
+  var _type = type(data);
+
+  if (_type === 'string') {
+    data = data.trim();
+  } else if (_type === 'array') {
+    data = data.map(function (item) {
+      return trim(item);
+    });
+  } else if (_type === 'object') {
+    for (var key in data) {
+      data[key] = trim(data[key]);
+    }
+  }
+
+  return data;
+};
+
+var index = {
+  cookie: cookie,
+  type: type,
+  clone: clone,
+  getParam: getParam,
+  download: download,
+  copy: copy,
+  uniqueId: uniqueId,
+  // isBrowser,
+  randomStr: randomStr,
+  debounce: debounce,
+  throttle: throttle,
+  trim: trim
+};
+
+export default index;

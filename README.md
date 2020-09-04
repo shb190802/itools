@@ -2,7 +2,9 @@
 
 前端开发中常用的工具方法
 
-
+```
+size < 3K
+```
 
 ## Install
 
@@ -78,14 +80,6 @@ const iTools = require('itools.js')
   ```javascript
   let name = iTools.getParam('name')
   let age = iTools.getParam('age', 'https://suohb.com?age=18')
-  ```
-
-* isBrowser
-
-  判断当前环境是否是浏览器环境
-  
-  ```javascript
-	let isBrowser = iTools.isBrowser // 是否浏览器环境
   ```
   
 * randomStr

@@ -5,7 +5,7 @@ import getParam from './tools/getParam'
 import download from './tools/download'
 import copy from './tools/copy'
 import uniqueId from './tools/uniqueId'
-import isBrowser from './tools/isBrowser'
+// import isBrowser from './tools/isBrowser'
 import randomStr from './tools/randomStr'
 import debounce from './tools/debounce'
 import throttle from './tools/throttle'
@@ -19,7 +19,7 @@ export default {
 	download,
 	copy,
 	uniqueId,
-	isBrowser,
+	// isBrowser,
 	randomStr,
 	debounce,
 	throttle,

@@ -69,7 +69,19 @@
 		console.log(iTools.trim(str4))
 		console.log(iTools.trim(arr))
 		console.log(iTools.trim(obj))
-
+		// once
+		let objOnce = {
+			name: 'once',
+			getName(value) {
+				console.log(this.name, value)
+			}
+		}
+		let objOnce2 = {
+			name: 'once2'
+		}
+		let onceFn = iTools.once(objOnce.getName, objOnce2)
+		onceFn(1)
+		onceFn(2)
 	</script>
 </body>
 

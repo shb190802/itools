@@ -143,4 +143,23 @@ const iTools = require('itools.js')
 	console.log(iTools.trim(obj)) // {a:'aa',b:['bb']}
 	```
   
+* once
+
+	方法仅执行一次
+
+	```javascript
+		let objOnce = {
+			name: 'once',
+			getName(value) {
+				console.log(this.name, value)
+			}
+		}
+		let objOnce2 = {
+			name: 'once2'
+		}
+		let onceFn = iTools.once(objOnce.getName, objOnce2)
+		onceFn(1) // once2 1
+		onceFn(2)
+	```
+  
 

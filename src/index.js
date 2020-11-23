@@ -10,6 +10,7 @@ import randomStr from './tools/randomStr'
 import debounce from './tools/debounce'
 import throttle from './tools/throttle'
 import trim from './tools/trim'
+import once from './tools/once'
 
 export default {
 	cookie,
@@ -23,5 +24,6 @@ export default {
 	randomStr,
 	debounce,
 	throttle,
-	trim
+	trim,
+	once
 }

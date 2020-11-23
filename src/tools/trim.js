@@ -1,3 +1,6 @@
+/**
+ * 深层trim
+ */
 import type from './type'
 
 const trim = (data) => {
